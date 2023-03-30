@@ -24,7 +24,7 @@ app.get('/app/rps/', (req, res) => {
 
 //check endpoint /app/rpsls/, returns "player":"(rock|paper|scissors|lizard|spock)"}
 app.get('/app/rpsls/', (req, res) => {
-	res.status.send(rpsls());
+	res.status(200).send(rpsls());
 });
 
 // check endpoint /app/rps/play/ (URLEncoded)
