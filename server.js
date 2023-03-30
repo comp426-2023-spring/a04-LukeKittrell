@@ -33,7 +33,7 @@ app.get('/app/rps/play/', (req, res) => {
 });
 
 // check endpoint /app/rps/play/ (JSON)
-app.post('/app/rsp/play/', (req, res) => {
+app.post('/app/rps/play/', (req, res) => {
 	res.status(200).send(rps(req.body.shot));
 });
 
