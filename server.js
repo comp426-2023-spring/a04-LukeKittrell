@@ -18,7 +18,7 @@ app.get('/app/', (req, res) => {
 });
 
 //check ednpoint /app/rps/, returns {"player":"(rock|paper|scissors)"}
-app.get('/app/rps/', (req, res => {
+app.get('/app/rps/', (req, res) => {
 	res.status(200).send(rps());
 });
 
@@ -58,11 +58,11 @@ app.get('/app/rpsls/play/:shot', (req, res) => {
 });
 
 //default endpoint
-app.get('*', req, res) => {
+app.get('*', (req, res) => {
 	res.status(404).send('404 NOT FOUND');
 });
 
 //start server
 app.listen(PORT, () => {
-	console.log('sever running on port ${PORT}');
+	console.log('sever running on port' ,$,{PORT});
 });
