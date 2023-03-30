@@ -27,6 +27,36 @@ app.get('/app/rpsls/', (req, res) => {
 	res.status.send(rpsls());
 });
 
+// check endpoint /app/rps/play/ (URLEncoded)
+app.get('/app/rps/play/', (req, res) => {
+	res.status(200).send(rps(req.query.shot));
+});
+
+// check endpoint /app/rps/play/ (JSON)
+app.post('/app/rsp/play/', (req, res) => {
+	res.status(200).send(rps(req.body.shot));
+});
+
+//check endpoint /app/rpsls/play (URLEncoded)
+app.get('/app/rpsls/play/', (req, res) => {
+	res.status(200).send(rpsls(req.query.shot));
+});
+
+//check endpoint /app/rpsls/play/ (JSON)
+app.post('/app/rpsls/play/', (req, res) => {
+	res.status(200).send(rpsls(req.body.shot));
+});
+
+//check endpoint /app/rps/play/(rock|paper|scissors)/
+app.get('/app/rps/play/:shot', (req, res) => {
+	res.status(200).send(rps(req.params.shot));
+});
+
+//check endpoint /app/rpsls/play/(rock|paper|scissors|lizard|spock)/
+app.get('/app/rpsls/play/:shot', (req, res) => {
+	res.status(200).send(rpsls(req.params.shot));
+});
+
 //default endpoint
 app.get('*', req, res) => {
 	res.status(404).send('404 NOT FOUND');
