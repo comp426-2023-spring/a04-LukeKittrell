@@ -13,12 +13,22 @@ app.use(express.urlencoded({ extended: true}));
 const PORT = args.port || 5000;
 
 //check /app endpoint
-app.get('/app/', (rep, res) => {
+app.get('/app/', (req, res) => {
 	res.status(200).send('200 OK');
 });
 
+//check ednpoint /app/rps/, returns {"player":"(rock|paper|scissors)"}
+app.get('/app/rps/', (req, res => {
+	res.status(200).send(rps());
+});
+
+//check endpoint /app/rpsls/, returns "player":"(rock|paper|scissors|lizard|spock)"}
+app.get('/app/rpsls/', (req, res) => {
+	res.status.send(rpsls());
+});
+
 //default endpoint
-app.get('*', rep, res) => {
+app.get('*', req, res) => {
 	res.status(404).send('404 NOT FOUND');
 });
 
